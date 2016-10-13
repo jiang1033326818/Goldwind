@@ -2,10 +2,10 @@ import BaseApplication  from "./base/BaseApplication";
 
 module.exports = {
   name: 'app',
-  path: '/re/',
+  path: '/app/',
   component: BaseApplication,
   childRoutes: [
-    require('./special'),
+    require('./pages'),
     require('./404')
   ]
 };

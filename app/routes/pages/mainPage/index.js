@@ -1,5 +1,5 @@
 module.exports = {
-  path: 'thailandtourv3/home',
+  path: 'mainpage',
   indexRoute: {
     getComponent(nextState, cb) {
       require.ensure([], (require) => {

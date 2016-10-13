@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 
 var actions = require('../../redux/actions');
 var {dispatch} = require('../../redux/store');
+require('./BaseApplication.gscss');
 
 class Application extends React.Component {
 
