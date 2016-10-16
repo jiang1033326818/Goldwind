@@ -21,45 +21,45 @@ let Component = React.createClass({
                                 <div className={styles.fromBox} key={key}>
                                     <input placeholder={value.content}
                                            onChange={(e)=>inputOnChange(e.target.value, value.id)}
-                                           onFocus={()=>onFocus}/>
+                                           onFocus={()=>onFocus} style={{width:value.width}}/>
                                 </div>
                             )
                         } else if (value.type === 'button') {
                             return (
                                 <div className={styles.fromBox} key={key}>
                                     <button placeholder={value.content}
-                                            onClick={()=>buttonAction(value)}>{value.id}</button>
+                                            onClick={()=>buttonAction(value)}>{value.title}</button>
                                 </div>
                             )
                         } else if (value.type === 'date') {
                             return (
                                 <div className={styles.fromBox} key={key}>
-                                    <input placeholder={value.content} type='date'/>
+                                    <input placeholder={value.content} type='date' style={{width:value.width}}/>
                                 </div>
                             )
                         } else if (value.type === 'chcekBox') {
                             return (
                                 <div className={styles.fromBox} key={key}>
-                                    <input placeholder={value.content} type='checkbox' style={{fontSize:30}}/>{value.id}
+                                    <input placeholder={value.content} type='checkbox'
+                                           style={{fontSize:30}}/>{value.title}
                                 </div>
                             )
                         } else if (value.type === 'select') {
                             return (
                                 <div className={styles.fromBox} key={key}>
                                     <select>
-                                        <option value="volvo">Volvo</option>
-                                        <option value="saab">Saab</option>
-                                        <option value="opel">Opel</option>
-                                        <option value="audi">Audi</option>
+                                        {value.select.map((value, key)=> {
+                                            return (
+                                                <option value={value} key={key}>{value}</option>
+                                            )
+                                        })}
                                     </select>
                                 </div>
                             )
                         } else if (value.type === 'textarea') {
                             return (
                                 <div className={styles.fromBox} key={key}>
-                                    <textarea rows="3" cols="20" style={{resize:'none'}}>
-                                    在w3school，你可以找到你所需要的所有的网站建设教程。
-                                    </textarea>
+                                    <textarea rows={value.rows} cols={value.cols} style={{resize:'none'}} defaultValue={value.content}/>
                                 </div>
                             )
                         }
@@ -88,9 +88,7 @@ const mapDispatchToProps = (dispatch) => {
 
         },
         buttonAction: (value)=> {
-
             console.log(value);
-            alert(data.data[value.id].data);
         },
         onFocus: ()=> {
             alert('我获取了焦点');
