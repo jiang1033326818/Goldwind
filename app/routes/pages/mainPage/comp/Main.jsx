@@ -15,9 +15,6 @@ let Component = React.createClass({
     render() {
         return (
             <div className={styles.bodyBox}>
-                <Chart/>
-                <From/>
-                <Table/>
             </div>
         );
     }

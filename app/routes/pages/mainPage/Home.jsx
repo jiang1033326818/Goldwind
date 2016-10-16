@@ -7,16 +7,19 @@ import Body from './module/Body';
 import FixedContent from '../../../components/common/FixedContent.jsx';
 
 let page = require('../../../../config/page');
+let comp = require('../../../../config/comp');
+let tabaleData = require('../../../../config/table-data');
 
 let Component = React.createClass({
     componentDidMount() {
+        this.props.init();
     },
     render() {
         return (
             <FixedContent mode="fullWidth" width={1920}>
                 <Header headerInfo={page.header}></Header>
                 <Tree treeOpt={page.tree}></Tree>
-                <Body></Body>
+                <Body {...comp.comps}></Body>
             </FixedContent>
         );
     }
@@ -28,7 +31,11 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-    return {}
+    return {
+        init: ()=>{
+            dispatch(actions.setObjs('tableContent', tabaleData));
+        }
+    }
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Component);

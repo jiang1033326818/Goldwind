@@ -17,12 +17,12 @@ module.exports = {
         ]
     },
     tree: [
-        {
-            title:'主页',
-            page:'main',
-            iconNormal: require('../app/routes/pages/mainPage/img/comp/main_normal.png'),
-            iconActive: require('../app/routes/pages/mainPage/img/comp/main_active.png'),
-        },
+        // {
+        //     title:'主页',
+        //     page:'main',
+        //     iconNormal: require('../app/routes/pages/mainPage/img/comp/main_normal.png'),
+        //     iconActive: require('../app/routes/pages/mainPage/img/comp/main_active.png'),
+        // },
         {
             title:'图表',
             page:'chart',

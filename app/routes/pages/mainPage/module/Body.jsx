@@ -17,11 +17,11 @@ let Component = React.createClass({
     },
 
     render() {
-        let {item} = this.props;
+        let {item,chart,from,table} = this.props;
         return (
             <div className={styles.bodyBox}>
                 {item && item.page === 'chart' && <Chart></Chart>}
-                {item && item.page === 'from' && <From></From>}
+                {item && item.page === 'from' && <From comp={from}></From>}
                 {item && item.page === 'main' && <Main></Main>}
                 {item && item.page === 'table' && <Table></Table>}
             </div>
@@ -39,10 +39,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         init: () => {
-            console.log(page)
             dispatch(actions.setVars('treeItemActive', 2));
             dispatch(actions.setVars('treeItem', page.tree[2]));
-            console.log(page.tree[0]);
         },
     };
 };
