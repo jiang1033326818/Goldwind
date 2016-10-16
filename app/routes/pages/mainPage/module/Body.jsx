@@ -39,8 +39,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         init: () => {
-            dispatch(actions.setVars('treeItemActive', 2));
-            dispatch(actions.setVars('treeItem', page.tree[2]));
+            dispatch(actions.setVars('treeItemActive', 1));
+            dispatch(actions.setVars('treeItem', page.tree[1]));
         },
     };
 };

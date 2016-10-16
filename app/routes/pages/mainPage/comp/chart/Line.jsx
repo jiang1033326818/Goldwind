@@ -3,12 +3,14 @@ import {connect} from 'react-redux';
 var actions = require('redux/actions');
 var ReactHighcharts = require('react-highcharts');
 
+let data = require('../../../../../../config/chart-data');
+
 let Component = React.createClass({
     componentWillMount() {
     },
 
     render() {
-        let doughnutValue = [10, 21, 11, 31, 21];
+        let doughnutValue = data.data.line;
         let configPie = {
             chart: {
                 backgroundColor: "rgba(46, 46, 65, 0)",

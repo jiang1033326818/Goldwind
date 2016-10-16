@@ -1,11 +1,10 @@
 .bodyBox {
   background-color: #ffffff;
-  .inputBox {
+  overflow: hidden;
+  .fromBox {
     padding: 10px 30px 10px;
-    input {
-      width: 200px;
-      height: 40px;
-      border: 1px solid #999999;
-    }
+    float: left;
+    width: 200px;
+    text-align: center;
   }
 }
