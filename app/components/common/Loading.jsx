@@ -1,17 +1,11 @@
 import React from "react";
-import Header from '../components/Header.jsx';
 require('./Loading.gscss');
 
 export default class Loading extends React.Component {
 
   render() {
-    let {title} = this.props;
     return (
       <div>
-        {
-          title &&
-          <Header title={title}/>
-        }
         <div className="spinner">
           <div className="spinner-container container1">
             <div className="circle1"></div>

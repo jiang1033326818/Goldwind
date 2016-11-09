@@ -1,16 +1,13 @@
 import React from 'react';
 import {connect} from 'react-redux';
-var actions = require('redux/actions');
-var ReactHighcharts = require('react-highcharts');
-
 import styles from './Chart.scss';
-
 import Pie from './chart/Pie.jsx';
 import Line from './chart/Line.jsx';
 import Column from './chart/Column.jsx';
 
 let Component = React.createClass({
-    componentWillMount() {
+    componentDidMount() {
+        this.props.init();
     },
 
     render() {
@@ -50,7 +47,11 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         init: () => {
-        },
+            var obj = {
+                test:''
+            }
+        }
+        ,
     };
 };
 

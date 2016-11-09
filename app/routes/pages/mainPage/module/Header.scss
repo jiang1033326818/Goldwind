@@ -1,57 +1,54 @@
 .navHeader {
   width: 100%;
-  height: 100px;
-  background-color: #444444;
-  padding: 20px 0 20px;
+  height: 80px;
+  background-color: #2A3241;
   font-size: 20px;
   .navIcon {
     width: 380px;
     height: 60px;
-    padding-left: 24px;
+    padding: 10px 24px 10px;
     line-height: 60px;
     float: left;
     color: #ffffff;
-    border-right: 1px solid #313233;
     img {
       height: 60px;
     }
   }
-  .searchBox {
-    height: 60px;
-    float: left;
-    img {
-      margin: 15px 10px 15px;
-      width: 30px;
-      height: 30px;
-    }
-    input {
-      border: none;
-      width: 300px;
-      background-color: #444444;
-      color: #ffffff;
-    }
-  }
   .methodBox {
-    float: right;
-    padding: 15px 70px 15px;
-    height: 60px;
-    img {
-      height: 30px;
-      margin-left: 50px;
+    text-align: right;
+    .itemBox {
+      display: inline-block;
+      overflow: hidden;
+      height: 80px;
+      line-height: 80px;
+      text-align: center;
+      margin: 0 20px 0;
+      cursor: pointer;
+      img {
+      margin-right:15px;
+        height: 30px;
+      }
+      span {
+        color: #b1b2b4;
+      }
+      
     }
-  }
-  .userInfoBox {
-    float: right;
-    padding: 5px 0 5px;
-    height: 60px;
-    color: #ffffff;
-    img {
-      height: 50px;
-      margin-right: 20px;
-    }
-    .arrow {
-      height: 12px;
-      margin-left: 20px;
+    .itemBoxAct {
+      display: inline-block;
+      overflow: hidden;
+      height: 80px;
+      line-height: 80px;
+      border-bottom: 5px solid #3BA9AE;
+      text-align: center;
+      margin: 0 20px 0;
+      cursor: pointer;
+      img {
+        height: 30px;
+        margin-right:15px;
+      }
+      span {
+        color: #3BA9AE;
+      }
     }
   }
 }

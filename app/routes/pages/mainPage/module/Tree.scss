@@ -1,8 +1,57 @@
 .navTree {
-  width: 380px;
-  height: 1000px;
-  background-color: #F8F9FA;
-  border-right: 1px solid #E4E5E6;
+  width: 120px;
+  min-height: 1200px;
+  background-color: #262D3C;
   float: left;
   font-size: 20px;
+  .treeItemAct {
+    background-color: #1E2737;
+    height: 60px;
+    line-height: 60px;
+    color: #3BAAAF;
+    text-align: center;
+    cursor: pointer;
+    position:relative;
+    border-left:1px solide #2f828a;
+   a{
+   position:absolute;
+   top:10px;
+   right:5px;
+    width:10px;
+    height:10px;
+   
+
+ 
+   }
+    a:after, a:before {
+  border: solid transparent;
+  content: ' ';
+  height: 0;
+  left: -76%;
+  position: absolute;
+  width: 0;
+}
+
+a:after {
+  border-width: 12px;
+  border-right-color: #141B2A;
+  top: 12px;
+}
+
+a:before {
+  border-width: 14px;
+  border-right-color: #2f828a;
+  top: 10px;
+  left:-124%
+}
+  }
+
+  .treeItem {
+    background-color: #262D3C;
+    height: 60px;
+    line-height: 60px;
+    color: #abacb0;
+    text-align: center;
+    cursor: pointer;
+  }
 }

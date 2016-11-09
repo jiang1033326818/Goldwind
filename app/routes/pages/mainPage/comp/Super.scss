@@ -1,0 +1,91 @@
+.bodyBox {
+
+overflow:hidden;
+   .leftBox{
+    width: 478px;
+    overflow:hidden;
+    float:left;
+    padding-bottom:20px;
+    .states{
+       position:relative;
+       width:183px;
+       height:447px;
+       float:left;
+       margin-right:15px;
+       border:1px solid #3e4c67;
+       background: #1f2638;
+      
+      }
+    .indexs{
+      position:relative;
+      width:277px;
+      height:447px;
+      display:inline-block;
+      border:1px solid #3e4c67;
+      background: #1f2638;
+
+      }
+    .Speed{
+      position:relative;
+      width:100%;
+      height:158px;
+      border:1px solid #3e4c67;
+      margin-top:22px;
+      background: #1f2638;
+      }
+    .Completion{
+      position:relative;
+      width:100%;
+      height:260px;
+      margin-top:22px;
+      border:1px solid #3e4c67;
+      background: #1f2638;
+
+      }
+
+    }
+ .rightBox{
+    display:inline-block;
+    margin-left:40px;
+    width: 1222px;
+    padding-bottom:20px;
+    .chart_pie{
+      position:relative;
+      width:100%;
+      overflow:hidden;
+      .ehart{
+        position:relative;
+         width:390px;
+         height:280px;
+         float:left;
+         border:1px solid #3e4c67;
+         background: #1f2638;
+        
+      }
+      .spanL{
+
+      margin:0 25px;
+      }
+
+    }
+    .chart_bar{
+      position:relative;
+      width:100%;
+      height:247px;
+      margin-top:25px;
+      border:1px solid #3e4c67;
+      background: #1f2638;
+
+    }
+    .table{ 
+      position:relative;
+      width:100%;
+      height:330px;
+      border:1px solid #3e4c67;
+      margin-top:25px;
+      background: #1f2638;
+    }
+    
+
+ }
+}

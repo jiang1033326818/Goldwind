@@ -1,14 +1,14 @@
 import React from 'react';
 import {connect} from 'react-redux';
-var actions = require('redux/actions');
-
 import styles from './Body.scss';
-
 import Chart from '../comp/Chart.jsx';
 import From from '../comp/From.jsx';
-import Main from '../comp/Main.jsx';
 import Table from '../comp/Table.jsx';
-
+import Super from '../comp/Super.jsx';
+import Tab from './Tab.jsx';
+import Tree from './Tree.jsx';
+import Header from './Header.jsx';
+var actions = require('redux/actions');
 let page = require('../../../../../config/page');
 
 let Component = React.createClass({
@@ -17,13 +17,15 @@ let Component = React.createClass({
     },
 
     render() {
-        let {item,chart,from,table} = this.props;
+        let {showPage, tabOpt, tab,} = this.props;
         return (
             <div className={styles.bodyBox}>
-                {item && item.page === 'chart' && <Chart></Chart>}
-                {item && item.page === 'from' && <From comp={from}></From>}
-                {item && item.page === 'main' && <Main></Main>}
-                {item && item.page === 'table' && <Table></Table>}
+                <Tab tabOpt={tabOpt} tab={tab}/>
+                {showPage === 'chart' && <Chart></Chart>}
+                {showPage === 'from' && <From></From>}
+                {showPage === 'table' && <Table></Table>}
+                {showPage === 'super' && <Super></Super>}
+
             </div>
         );
     }
@@ -32,15 +34,13 @@ let Component = React.createClass({
 
 const mapStateToProps = (state) => {
     return {
-        item: state.vars.treeItem,
+        showPage: state.vars.showPage,
     }
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
         init: () => {
-            dispatch(actions.setVars('treeItemActive', 1));
-            dispatch(actions.setVars('treeItem', page.tree[1]));
         },
     };
 };

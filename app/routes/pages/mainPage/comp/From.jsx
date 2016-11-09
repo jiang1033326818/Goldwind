@@ -5,13 +5,15 @@ var actions = require('redux/actions');
 import styles from './From.scss';
 
 let data = require('../../../../../config/data');
+let comps = require('../../../../../config/comp');
 
 let Component = React.createClass({
     componentWillMount() {
     },
 
     render() {
-        let {comp, buttonAction, inputOnChange, onFocus} = this.props;
+        let {buttonAction, inputOnChange, onFocus} = this.props;
+        let comp = comps.comps.from;
         return (
             <div className={styles.bodyBox}>
                 {

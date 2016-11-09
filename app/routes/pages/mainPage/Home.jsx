@@ -1,10 +1,11 @@
 import React from "react";
 import {connect} from 'react-redux';
-var actions = require('redux/actions');
 import Header from './module/Header';
 import Tree from './module/Tree';
 import Body from './module/Body';
 import FixedContent from '../../../components/common/FixedContent.jsx';
+
+var actions = require('redux/actions');
 
 let page = require('../../../../config/page');
 let comp = require('../../../../config/comp');
@@ -15,11 +16,12 @@ let Component = React.createClass({
         this.props.init();
     },
     render() {
+        let {itemHeaderActive, itemTreeAct}=this.props;
         return (
             <FixedContent mode="fullWidth" width={1920}>
                 <Header headerInfo={page.header}></Header>
-                <Tree treeOpt={page.tree}></Tree>
-                <Body {...comp.comps}></Body>
+                <Tree treeOpt={page.header[itemHeaderActive]}></Tree>
+                <Body tabOpt={page.header[itemHeaderActive]} tab={itemTreeAct}></Body>
             </FixedContent>
         );
     }
@@ -27,14 +29,16 @@ let Component = React.createClass({
 
 const mapStateToProps = (state) => {
     return {
+        itemHeaderActive: state.vars.headerItemActive,
+        itemTreeAct: state.vars.treeItemActive,
     }
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        init: ()=>{
-            dispatch(actions.setObjs('tableContent', tabaleData));
-        }
+        init: ()=> {
+            dispatch(actions.setVars('headerItemActive', 0));
+        },
     }
 };
 

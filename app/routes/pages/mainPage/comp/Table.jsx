@@ -13,7 +13,7 @@ let tabaleData = require('../../../../../config/table-data');
 
 let Component = React.createClass({
     componentDidMount() {
-        this.props.init(this.props.table);
+        this.props.init(tabaleData);
     },
     render() {
         let {table, changeTableItem} = this.props;
@@ -26,7 +26,7 @@ let Component = React.createClass({
                 <div className={styles.tableBox}>
                     <div className={styles.tableHeaderBox}>
                         {
-                            table.data.header.map((value, key)=> {
+                            tabaleData.data.header.map((value, key)=> {
                                 return (
                                     <div className={styles.tableHeaderItem}
                                          style={{width:(1350/tabaleData.data.header.length)-6}} key={key}>{value}</div>
@@ -36,7 +36,7 @@ let Component = React.createClass({
                     </div>
                     <div className={styles.tableContentBox}>
                         {
-                            table.data.content.map((value, key)=> {
+                            tabaleData.data.content.map((value, key)=> {
                                 return (
                                     <div className={styles.tableContentLine} key={key}>
                                         <div className={styles.tableLineNum}>{key + 1}</div>
@@ -72,11 +72,10 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         init: (obj) => {
-            console.log(obj);
+            dispatch(actions.setObjs('tableContent', obj));
         },
         changeTableItem: (value, table, i, j) => {
             let tableV = _.clone(getState().objs.tableContent);
-            console.log(tableV);
             tableV.data.content[i][j] = value;
             dispatch(actions.setObjs('tableContent', tableV));
         }

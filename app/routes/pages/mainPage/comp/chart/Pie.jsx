@@ -17,7 +17,8 @@ let Component = React.createClass({
                 plotBackgroundColor: "rgba(46, 46, 65, 0)",
                 plotBorderWidth: 0,
                 borderWidth: 0,
-                plotShadow: false
+                plotShadow: false,
+                height:280
             },
             title: {
                 text: ''
@@ -29,15 +30,15 @@ let Component = React.createClass({
             credits: {
                 enabled: false //不显示highCharts版权信息
             },
-            colors: ['#4CDB9D', '#339C70', '#1E664A', '#134833', '#082B1F']
+            colors: ['#3474a0', '#4fafad', '#e0cee6', '#78719d', '#f9b552', '#6bd0da', '#fb8071']
             ,
             plotOptions: {
                 pie: {
                     allowPointSelect: false,
                     cursor: 'pointer',
                     borderWidth: 0,
-                    size: '100%',
-                    innerSize: '80%',
+                    size: '50%',
+                    innerSize: '40%',
                     dataLabels: {
                         enabled: false
                     }

@@ -1,51 +1,21 @@
-.navHeader {
+.navTab {
   width: 100%;
-  height: 80px;
-  background-color: #2A3241;
+  height: 59px;
+  line-height: 59px;
   font-size: 20px;
-  .navIcon {
-    width: 380px;
-    height: 60px;
-    padding: 10px 24px 10px;
-    line-height: 60px;
-    float: left;
-    color: #ffffff;
-    img {
-      height: 60px;
-    }
+  color: #666666;
+  .tabItemAct {
+    min-width: 120px;
+    display: inline-block;
+    color: #AFB3B4;
+    padding: 0 10px 0;
+    cursor: pointer;
   }
-  .methodBox {
-    text-align: right;
-    .itemBox {
-      display: inline-block;
-      overflow: hidden;
-      height: 80px;
-      line-height: 80px;
-      text-align: center;
-      margin: 0 20px 0;
-      cursor: pointer;
-      img {
-        height: 30px;
-      }
-      span {
-        color: #666666;
-      }
-    }
-    .itemBoxAct {
-      display: inline-block;
-      overflow: hidden;
-      height: 80px;
-      line-height: 80px;
-      border-bottom: 5px solid #3BA9AE;
-      text-align: center;
-      margin: 0 20px 0;
-      cursor: pointer;
-      img {
-        height: 30px;
-      }
-      span {
-        color: #3BA9AE;
-      }
-    }
+  .tabItem {
+    min-width: 120px;
+    display: inline-block;
+    color: #666666;
+    padding: 0 10px 0;
+    cursor: pointer;
   }
 }
